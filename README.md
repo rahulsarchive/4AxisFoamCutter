@@ -9,14 +9,14 @@ The problem is how to control 4 independent axes at the same time. Most tutorial
 
 ## Hot wire CNC Resources
 
-[Hot wire cutter, RcKeith](http://www.rckeith.co.uk/cnc-hot-wire-foam-cutter/)
-[4-axis cnc hotwire cutter (arduino+Ramps)](https://www.rcgroups.com/forums/showthread.php?2915801-4-Axis-Hot-Wire-CNC-%28Arduino-Ramps1-4%29-Complete-Solution)
-[Free CNC Software](http://www.rckeith.co.uk/free-cnc-software-3-and-4-axis/)
-[4-axis Arduino based Hot wire cutter](https://www.rcgroups.com/forums/showthread.php?2388809-4-axis-Arduino-based-CNC-hot-wire-foam-cutter)
-[Devcnc Foam cutting software](http://www.devcad.com/eng/devcncfoam_f1_3.asp)
-[Jedicut foam cutting software](https://www.jedicut.com/)
-[Arduino Uno based foam cutter](https://sites.google.com/site/foamcuttercnc/software)
-[Nichrome wire Application Calculator](http://www.jacobs-online.biz/nichrome/NichromeCalc.html)
+[Hot wire cutter, RcKeith](http://www.rckeith.co.uk/cnc-hot-wire-foam-cutter/)  
+[4-axis cnc hotwire cutter (arduino+Ramps)](https://www.rcgroups.com/forums/showthread.php?2915801-4-Axis-Hot-Wire-CNC-%28Arduino-Ramps1-4%29-Complete-Solution)  
+[Free CNC Software](http://www.rckeith.co.uk/free-cnc-software-3-and-4-axis/)  
+[4-axis Arduino based Hot wire cutter](https://www.rcgroups.com/forums/showthread.php?2388809-4-axis-Arduino-based-CNC-hot-wire-foam-cutter)  
+[Devcnc Foam cutting software](http://www.devcad.com/eng/devcncfoam_f1_3.asp)  
+[Jedicut foam cutting software](https://www.jedicut.com/)  
+[Arduino Uno based foam cutter](https://sites.google.com/site/foamcuttercnc/software)  
+[Nichrome wire Application Calculator](http://www.jacobs-online.biz/nichrome/NichromeCalc.html)  
 
 
 ## Hardware
