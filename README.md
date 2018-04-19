@@ -39,10 +39,18 @@ The problem is how to control 4 independent axes at the same time. Most tutorial
     2. Jedicut  
     3. FoamXL  
  
-## Building the Machine
-
 We realized that the most difficult part of making a CNC hot wire cutter was the G-code and Controlling systems. So we decided to start from there. In our inital research we found many people using DevFoam and profilli for generating the G-code and using Mach3 to control their machine. But unfortunately, these softwares were not free and to run a Mach3 machine you need a parallel port, which is outdated now. Then our search lead to an Arduino based 4-axis cutter developed by [Marginally clever](https://www.marginallyclever.com/) which used an arduino Mega2560 and the Ramps 1.4 CNC sheild.
 
-His page has codes for moving 4 independent axis and a Java based G-code sender application that could send the the G-code secquentially to the Arduino using the serial port. We tried this solution and after some fiddiling around, we got it working. Not the easiest or most straight forward method. There is almost not documentation on how to use it.
+His page has codes for moving 4 independent axis and a Java based [G-code sender](https://github.com/MarginallyClever/GcodeSender) application that could send the the G-code secquentially to the Arduino using the serial port. We tried this solution and after some fiddiling around, we got it working. Not the easiest or most straight forward method. There is almost not documentation on how to use it.
 
 [RcKeith](http://www.rckeith.co.uk/cnc-hot-wire-foam-cutter/) has some good documentation on the machines he built and what he used to control them. Some of them use expensive software and outdate hardware, which might be difficult to find.
+
+## Building the Machine
+
+My intial design was based on Rckeith's foam cutter which used drawer slides as the linear guideways. This seemed like a good idea. They were locally available and rails are rigid without much backlash. The first design was for a machine with two towers on linear slides, with a total travel of the towers for about 20 inches. The machine would be laser cut out of 4mm plywood.
+
+![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/initialdesign.jpg)
+
+This was well and good, until we went to the shop to buy the slides. A 20 inch drawer slide can only travel 10 inches, so inorder to get 20 inches of travel we would need a slide of 40 inches, which were just too bulky and expensive for our use and the rails would protrude out of the machine for about 20 inches. Hence we dropped the plans for using drawer slides. Back to the drawing board.
+
+A redesigned machine using
