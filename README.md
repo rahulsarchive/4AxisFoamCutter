@@ -53,4 +53,21 @@ My intial design was based on Rckeith's foam cutter which used drawer slides as 
 
 This was well and good, until we went to the shop to buy the slides. A 20 inch drawer slide can only travel 10 inches, so inorder to get 20 inches of travel we would need a slide of 40 inches, which were just too bulky and expensive for our use and the rails would protrude out of the machine for about 20 inches. Hence we dropped the plans for using drawer slides. Back to the drawing board.
 
-A redesigned machine using
+We started on a new design for a more rigid maachine using smooth rods and leadscrews for motion.
+
+![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/design.png)
+![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/final%20design.png)
+
+A fully redesigned machine using 1/2 inch steel tubes, 12 mm plywood as the base and M8 lead screws to move the axes.
+
+![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/Foamcutter_V3.png)
+
+All the parts, except the lead screws were bought locally. The half inch steel tubes were not designed for linear bearings and there are not dimensionally accurate. So our plan was to 3D print a coupling for it to reduce the friction between wood and the steel.
+
+The design made ready for milling on Shopbot (CNC mill) 
+
+![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/cutout.png)
+
+We cut the design by exporting the 2D DXF sketches and doing the CAM operations in Vcarvepro software. The cut out after CNC milling
+
+![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/plcut.jpg)
