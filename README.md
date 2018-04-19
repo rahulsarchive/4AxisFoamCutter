@@ -113,7 +113,7 @@ The A4988 stepper drivers can be attached on top of the Ramps, one for each axis
 ![Ramps + Arduino Mega2560](Images/ramps.jpg)
 
 **IMPORTANT**
-When the system is powered on, the stepper motors continue to draw current to maintian the holding position. The components like Stepper drivers and Mosfets can get very hot during operation. Do not operate the Ramps board without **active cooling**.
+When the system is powered on, the stepper motors continue to draw current to maintain the holding position. The components like Stepper drivers and Mosfets can get very hot during operation. Do not operate the Ramps board without **active cooling**.
 
 In the begining we ran our machine without active cooling and lost 4 stepper drivers and bricked an Mega2560. After that we made a base for the board, attached it using spacers and put a fan to cool the board.
 
@@ -125,7 +125,7 @@ The board rests on spacers and is cooled by a 12V fan to prevent over heating of
 
 ### Grbl Hotwire controller
 
-We are using a Grbl control panel which was developed by [Garret Visser](http://github.com/Gerritv/Grbl-Panel/wiki) which was adapted for Hot wire cutting by Daniel Rascio.
+We are using a Grbl control panel developed by [Garret Visser](http://github.com/Gerritv/Grbl-Panel/wiki) which was adapted for Hot wire cutting by Daniel Rascio.
 
 ![Grbl control panel](Images/Grbl.jpg)
 
@@ -148,10 +148,30 @@ Nichrome is a suitable material, I have seen some use steel fishing lines. This 
 
 The next step is to attach the nichrome wire to the machine, since we have 4 independent axis, we cannot just tie both ends of the wire to the towers. The wire needs to have some extension to it, either by means of a spring or a weight attached to the end.
 
+![hot wire attachment](Images/leftaxis.jpg)
+
+The hot wire is attached using hoops screws into the wood, these hoops help the wire move back and forth while maintaining the same height. A pulley would have been best, but we wanted to start with something simple and work our way up. In the left axis one end of the wire is attached to a screw, which is pulled up to maintain a level height at the hoop.
+
+![hot wire attachment](Images/rightaxis.jpg)
+
+The other end of the wire is currently attached to the end of a torsion spring we had laying around, which will provide the necessart tension to keep the wire taught and to give some amount of flex so that the wire can extend and be pulled back.
+
+### Generating the G-code
+
+winggcode (python)
+jedicut
+
+
+### Setting the Feed rate and temperature
+
+
+### Cutting process
+
+![4 axis foam cutter](Images/maiden.gif)
+
+![cnc hot wire cut foam](Images/core1.jpg)
+
+![cnc hot wire cut foam](Images/core2.jpg)
 
 
 
-
-
-
-![4 axis foam cutter](Images/maiden%20cut.mp4)
