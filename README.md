@@ -50,38 +50,38 @@ His page has codes for moving 4 independent axis and a Java based [G-code sender
 
 My intial design was based on Rckeith's foam cutter which used drawer slides as the linear guideways. This seemed like a good idea. They were locally available and rails are rigid without much backlash. The first design was for a machine with two towers on linear slides, with a total travel of the towers for about 20 inches. The machine would be laser cut out of 4mm plywood.
 
-![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/initialdesign.jpg)
+![4 axis foam cutter](Images/initialdesign.jpg)
 
 This was well and good, until we went to the shop to buy the slides. A 20 inch drawer slide can only travel 10 inches, so inorder to get 20 inches of travel we would need a slide of 40 inches, which were just too bulky and expensive for our use and the rails would protrude out of the machine for about 20 inches. Hence we dropped the plans for using drawer slides. Back to the drawing board.
 
 We started on a new design for a more rigid maachine using smooth rods and leadscrews for motion.
 
-![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/design.png)
-![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/final%20design.png)
+![4 axis foam cutter](Images/design.png)
+![4 axis foam cutter](Images/final%20design.png)
 
 The design is fully parametric. You can change the length of each axes, the diamter of the rods and even the clearance height of the vertical axis by changing the parameters in the file. On the vertical axes there are 4 rods to provide some torsional rigidity so the towers would not bend.
 
 This is the fully redesigned machine using 1/2 inch steel tubes, 12 mm plywood as the base and M8 lead screws to move the axes. 
 
-![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/Foamcutter_V3.png)
+![4 axis foam cutter](Images/Foamcutter_V3.png)
 
 All the parts, except the lead screws were bought locally. The half inch steel tubes were not designed for linear bearings and there are not dimensionally accurate. So our plan was to 3D print a coupling for it to reduce the friction between wood and the steel.
 
 The design made ready for milling on Shopbot (CNC mill) 
 
-![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/cutout.png)
+![4 axis foam cutter](Images/cutout.png)
 
 We cut the design by exporting the 2D DXF sketches and doing the CAM operations in Vcarvepro software. The cut out after CNC milling
 
-![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/plcut.jpg)
+![4 axis foam cutter](Images/plcut.jpg)
 
 Since this is the intial version we decided to skip the couplers and go with wood on steel. we had to play with the tolerance between the circular hole and the steel tube to get it good enough to move on to the next step.
 
-![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/intialaxis.jpg)
+![4 axis foam cutter](Images/intialaxis.jpg)
 
 The first axis looks promising. The steel tubes are press fitted at the ends to form a rigid strucutre. The carriage is a bit loose but the motion is a lot smoother when a small amount of lubricant is applied. so we moved on to the vertical axis.
 
-![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/Vtower.jpg)
+![4 axis foam cutter](Images/Vtower.jpg)
 
 The vertical axis has two steel tubes to carry the weight and two smaller aluminum tubes to provide tortional rigidity. We are using a stepper motor with an integrated lead screw to avoid using a coupler. 
 
