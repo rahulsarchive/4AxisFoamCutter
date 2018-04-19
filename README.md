@@ -30,6 +30,7 @@ The problem is how to control 4 independent axes at the same time. Most tutorial
 6. A4988 Stepper driver (one for each axis)
 7. Arduino Mega 2560
 8. Nichrome wire (30 guage for smaller builds and 26 guage for larger ones)
+9. M8-M5 Motor coupler (M8 for the thread and M5 for the motor shaft)
 
 ## Software
 
@@ -58,7 +59,9 @@ We started on a new design for a more rigid maachine using smooth rods and leads
 ![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/design.png)
 ![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/final%20design.png)
 
-A fully redesigned machine using 1/2 inch steel tubes, 12 mm plywood as the base and M8 lead screws to move the axes.
+The design is fully parametric. You can change the length of each axes, the diamter of the rods and even the clearance height of the vertical axis by changing the parameters in the file. On the vertical axes there are 4 rods to provide some torsional rigidity so the towers would not bend.
+
+This is the fully redesigned machine using 1/2 inch steel tubes, 12 mm plywood as the base and M8 lead screws to move the axes. 
 
 ![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/Foamcutter_V3.png)
 
@@ -71,3 +74,19 @@ The design made ready for milling on Shopbot (CNC mill)
 We cut the design by exporting the 2D DXF sketches and doing the CAM operations in Vcarvepro software. The cut out after CNC milling
 
 ![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/plcut.jpg)
+
+Since this is the intial version we decided to skip the couplers and go with wood on steel. we had to play with the tolerance between the circular hole and the steel tube to get it good enough to move on to the next step.
+
+![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/intialaxis.jpg)
+
+The first axis looks promising. The steel tubes are press fitted at the ends to form a rigid strucutre. The carriage is a bit loose but the motion is a lot smoother when a small amount of lubricant is applied. so we moved on to the vertical axis.
+
+![4 axis foam cutter](https://github.com/rahulsarchive/4AxisFoamCutter/blob/master/Images/Vtower.jpg)
+
+The vertical axis has two steel tubes to carry the weight and two smaller aluminum tubes to provide tortional rigidity. We are using a stepper motor with an integrated lead screw to avoid using a coupler. 
+
+The final assembled towers. All the rods are press-fit at the ends and loose fit on the steel rods to give a smoooth motion.
+
+![4 axis foam cutter](Images/Final%20assembly.jpg)
+
+*Note-* When using sliding surfaces, depending on the material, a phenomenon called 'stick and slip' can happen. This would cause the motion to become jagged and cause vibrations. It may also lead to surfaces locking up leading to excessive loads and missed steps when using a stepper motor.   
