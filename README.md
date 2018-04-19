@@ -1,10 +1,10 @@
 # 4AxisFoamCutter
 
-We wanted to build an UAV out of foam, since there will be many iterations of designs to get through before reaching our goal. We decided to make a device to help us get through the iterations an bit faster, A hot wire cutter is the most efficient and clean way to cut foam. A CNC hot wire cutter is even better! It is an awesome tool to have when you are building airplanes out of foam. A properlly configured machine can save you a lot of time and produce a buttery smooth cut.
+Our goal was to build an UAV out of foam, since there will be many crashes involved, we decided to make a device to help us get through the iterations a bit faster. A hot wire cutter is the most efficient way to cut foam. A CNC hot wire cutter is even better! It is an awesome tool to have when you are building airplanes out of foam. A properlly configured machine can save you a lot of time and produce a smooth cut.
 
 Mechanically, its not complicated to make a CNC Hot wire cutter. All you need is 4 independed linear axes, two horizontal axes and two vertical axes stacked on top of it. This can be acheived by any means such as linear bearings, smooth rods and also drawer slides. The axes are driven by stepper motors. There are minimal cutting forces involved, the machine only needs to be rigid enough to witstand the tension of the wire streched between the towers.
 
-The problem is how to control 4 independent axes at the same time. Most tutorials online are for 3-axis 3D printers. Then there are documentation on people using expensive software and difficult to find hardware for making their 4-axis foam cutter.There does not seem to be enough documentation on building a 4-axis machine using easily available parts such as parts from a 3D printer kit and open source sotware. We found some people who had done similar projects and decided to make a CNC hot wire cutter ourselves and try it out.
+The problem is how to control 4 independent axes at the same time. Most tutorials online are for 3-axis 3D printers. Then there are documentation on people using expensive software and difficult to find hardware for making their 4-axis foam cutter.There does not seem to be enough documentation on building a 4-axis machine using easily available parts such as parts from a 3D printer kit and open source sotware. We found some people who had done similar projects using Arduino and Grbl, and decided to make a CNC hot wire cutter ourselves and try it out.
 
 ## Hot wire CNC Resources
 
@@ -45,6 +45,8 @@ We realized that the most difficult part of making a CNC hot wire cutter was the
 His page has codes for moving 4 independent axis and a Java based [G-code sender](https://github.com/MarginallyClever/GcodeSender) application that could send the the G-code secquentially to the Arduino using the serial port. We tried this solution and after some fiddiling around, we got it working. Not the easiest or most straight forward method. There is almost not documentation on how to use it.
 
 [RcKeith](http://www.rckeith.co.uk/cnc-hot-wire-foam-cutter/) has some good documentation on the machines he built and what he used to control them. Some of them use expensive software and outdate hardware, which might be difficult to find.
+
+We finally stumbled on a solution that worked, it was posted on a forum in rcgroups.com. Its for a [4 axis foam cutter using Arduino + Ramps1.4](https://www.rcgroups.com/forums/showthread.php?2915801-4-Axis-Hot-Wire-CNC-%28Arduino-Ramps1-4%29-Complete-Solution) It addressed the major problems we were having like a control software for the machine and generating 4-axis Gcode to drive the machine.
 
 ## Building the Machine
 
@@ -89,6 +91,67 @@ The final assembled towers. All the rods are press-fit at the ends and loose fit
 
 ![4 axis foam cutter](Images/Final%20assembly.jpg)
 
-*Note-* When using sliding surfaces, depending on the material, a phenomenon called 'stick and slip' can happen. This would cause the motion to become jagged and cause vibrations. It may also lead to surfaces locking up leading to excessive loads and missed steps when using a stepper motor.  
+**Note-** When using sliding surfaces, depending on the material, a phenomenon called **'stick and slip'** can happen. This would cause the motion to become jagged and cause vibrations. It may also lead to surfaces locking up leading to excessive loads and missed steps when using a stepper motor.  
 
-![](Images/maiden%20cut.mp4)
+
+After the machine was assembled its time for fix the machine on a table, connect all the electronics and tie the Nichrome wire across the towers.
+
+### Connecting the Electronics
+
+We fixed the machine on a table using clamps. The base is designed to make it easier to use clamps to hold it in place. 
+
+![ 4 axis foam cutter assembly](Images/clamp.jpg)
+
+The next step is to connect the electronics to move the motors and configure the machine. We have 4 stepper motors which need to be connected to our Ramps board. The wires need to extend enough to provide enough travel of the axes.
+
+![Wiring loom](Images/wiring%20loom.jpg)
+
+All the wiring connects to our Ramps board, which is a CNC sheild for Arduino Mega2560. The Ramps can support upto 5 stepper motor drivers like the A4988. We are using Nema 17 motors with 200 steps per revolution running at 1/16th microstepping, giving us a smooth rotary motion.
+
+The A4988 stepper drivers can be attached on top of the Ramps, one for each axis. Ensure **proper orientation** of the A4988 chip before attaching to the Ramps board. Each stepper can pull as much as 2 Amps, the stepper drivers have heat sinks to dissipate the heat. The board also has a 11A MOSFET on it to control the temperature of the wire connected to the D8 pin. All the components in the board will get hot, ensure proper cooling is provided. 
+
+![Ramps + Arduino Mega2560](Images/ramps.jpg)
+
+**IMPORTANT**
+When the system is powered on, the stepper motors continue to draw current to maintian the holding position. The components like Stepper drivers and Mosfets can get very hot during operation. Do not operate the Ramps board without **active cooling**.
+
+In the begining we ran our machine without active cooling and lost 4 stepper drivers and bricked an Mega2560. After that we made a base for the board, attached it using spacers and put a fan to cool the board.
+
+![Ramps + Arduino Mega2560](Images/ramps1.jpg)
+
+![Ramps + Arduino Mega2560](Images/ramps2.jpg)
+
+The board rests on spacers and is cooled by a 12V fan to prevent over heating of the board.
+
+### Grbl Hotwire controller
+
+We are using a Grbl control panel which was developed by [Garret Visser](http://github.com/Gerritv/Grbl-Panel/wiki) which was adapted for Hot wire cutting by Daniel Rascio.
+
+![Grbl control panel](Images/Grbl.jpg)
+
+The panel has Independent jogging control for all axis, including homing along with Gcode graph visualization, and the ability to save your own macros. The Hotwire temperature can be fully controlled using M3/M5 to turn ON/OFF and S"xxx" command to set the voltage output, either manually or via scroll bar in the software. The hotwire should be connected to "D8" output and is supplied by the power connected to the "11A" input on Ramps.
+
+### Configuring the Machine
+
+Every CNC needs to be properlly configured before operating. Since we are using stepper motors in an open loop system (without feedback) we need to know how far the carriage will move with every revolution of the Stepper motor. This depends on the **number of steps per revolution** of the motor, the **pitch of the lead screw** and the **level of microstepping** you are using.
+
+ **steps_per_mm = (motor_steps_per_rev * driver_microstep) / thread_pitch**
+
+After flashing the Megaa2560 with the Grbl8c2MegaRamps file, open the serial monitor and type '$$' to access the [Grbl settings](https://github.com/grbl/grbl/wiki/Configuring-Grbl-v0.9) panel. In order to change any value type the $number=value. Eg- $0=100
+Once the machine is configured, ensure that the machine moves the exact amount as shown in the controller.
+
+### Attaching the Hotwire
+
+In order to cut foam using a hot wire you need a resistance wire made of a suitable material which can withstand the heat and will have a uniform temperature across the length.
+
+Nichrome is a suitable material, I have seen some use steel fishing lines. This is a good article for [selecting a Nichrome wire](https://jacobs-online.biz/wire-xformer_selection.htm) for Hotwire cutting. Since our machine will use a wire length of more than 1 meter. we decided to use a 26 guage wire. It might be a bit too thick for our application. we will also test with a 32 guage wire and see how it goes.
+
+The next step is to attach the nichrome wire to the machine, since we have 4 independent axis, we cannot just tie both ends of the wire to the towers. The wire needs to have some extension to it, either by means of a spring or a weight attached to the end.
+
+
+
+
+
+
+
+![4 axis foam cutter](Images/maiden%20cut.mp4)
