@@ -89,4 +89,10 @@ The final assembled towers. All the rods are press-fit at the ends and loose fit
 
 ![4 axis foam cutter](Images/Final%20assembly.jpg)
 
-*Note-* When using sliding surfaces, depending on the material, a phenomenon called 'stick and slip' can happen. This would cause the motion to become jagged and cause vibrations. It may also lead to surfaces locking up leading to excessive loads and missed steps when using a stepper motor.   
+*Note-* When using sliding surfaces, depending on the material, a phenomenon called 'stick and slip' can happen. This would cause the motion to become jagged and cause vibrations. It may also lead to surfaces locking up leading to excessive loads and missed steps when using a stepper motor.  
+
+<video>
+  <source src="Images/maiden%20cut.mp4" type="video/mp4">
+
+  Your browser does not support the video tag.
+</video> 
