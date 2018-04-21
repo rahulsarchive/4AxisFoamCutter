@@ -11,6 +11,7 @@ The problem is how to control 4 independent axes at the same time. Most tutorial
 [Hot wire cutter, RcKeith](http://www.rckeith.co.uk/cnc-hot-wire-foam-cutter/)  
 [4-axis cnc hotwire cutter (arduino+Ramps)](https://www.rcgroups.com/forums/showthread.php?2915801-4-Axis-Hot-Wire-CNC-%28Arduino-Ramps1-4%29-Complete-Solution)  
 [WingGcode](https://github.com/swarfer/winggcode)  
+[Airfoil coordinates database](http://m-selig.ae.illinois.edu/ads/coord_database.html)
 [Free CNC Software](http://www.rckeith.co.uk/free-cnc-software-3-and-4-axis/)  
 [4-axis Arduino based Hot wire cutter](https://www.rcgroups.com/forums/showthread.php?2388809-4-axis-Arduino-based-CNC-hot-wire-foam-cutter)  
 [Devcnc Foam cutting software](http://www.devcad.com/eng/devcncfoam_f1_3.asp)  
@@ -18,6 +19,7 @@ The problem is how to control 4 independent axes at the same time. Most tutorial
 [Arduino Uno based foam cutter](https://sites.google.com/site/foamcuttercnc/software)  
 [Nichrome wire Application Calculator](http://www.jacobs-online.biz/nichrome/NichromeCalc.html)  
 [G-codes simply explained](https://all3dp.com/g-code-tutorial-3d-printer-gcode-commands/)
+
 
 
 ## Hardware
@@ -154,13 +156,28 @@ The hot wire is attached using hoops screws into the wood, these hoops help the 
 
 ![hot wire attachment](Images/rightaxis.jpg)
 
-The other end of the wire is currently attached to the end of a torsion spring we had laying around, which will provide the necessart tension to keep the wire taught and to give some amount of flex so that the wire can extend and be pulled back.
+The other end of the wire is currently attached to the end of a torsion spring we had laying around, which will provide the necessary tension to keep the wire taught and to give some amount of flex so that the wire can extend and be pulled back.
 
 ### Generating the G-code
 
-winggcode (python)
-jedicut
+#### Wing G-code Generator
 
+[Wing G-code Generator](https://github.com/swarfer/winggcode) is a program to generate XYUV G-code for hotwire cutting model airplan wings. It runs on python 2.7 and can also integrate with LinuxCNC's Axis interface. There is also an [online version](http://swarfer.co.za/rc/wire/index.php)
+
+![Wing Gcode generator](Images/winggcode.PNG)
+
+It alows you to enter the parameters of the wing such as root chord, tip chord, Sweep, gantry length and even support washout. It has a database of airfoils in **.dat** format. New airfoils can be imported in the same way.
+
+
+#### Jedicut 2.4
+
+Jedicut is a cool piece of software in that it can do both CAD/CAM and also act as a machine controller. Thought the machine controller needs a PC with the old parallel port interface. But it also has a plugin to generate the G-code. It is not the easiest to configure. Some of the options and error messages are in french, but if you sit with it for sometime, you can get it working.
+
+![Jedicut 4 axis g code](Images/jedicut.PNG)
+
+It has lots of features like cutting wizard to help you do sweept wings and compensate for wire kerf by adding a skin thickness. It can but more than wing profiles, it can cut out lettering and other shapes also.
+
+![Jedicut 4 axis g code](Images/jedi2.PNG)
 
 ### Setting the Feed rate and temperature
 
