@@ -179,12 +179,17 @@ It has lots of features like cutting wizard to help you do sweept wings and comp
 
 ![Jedicut 4 axis g code](Images/jedi2.PNG)
 
+
+***Note-**  Wing g-code generates G-codes in Absolute mode which works on Grbl without any issues, but Jedicut generates G-code in incremental mode. We had difficulty when first getting it to work, where the machine would just move back and forth. If this happens, Edit the G-code to remove unecceasry lines in the header.*
+
+*Both Wing G-code and Jedicut generates G-code with some Grbl unsupported codes in the header, The controller will show in the monitor when such errors happen. Edit the G-code and remove unecessary lines of code.*
+
 ### Setting the Feed rate and temperature
 
 
 ### Cutting process
 
-![4 axis foam cutter](Images/maiden.gif)
+![4 axis foam cutter](Images/maiden1.gif)
 
 ![cnc hot wire cut foam](Images/core1.jpg)
 
