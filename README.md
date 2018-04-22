@@ -197,3 +197,7 @@ It has lots of features like cutting wizard to help you do sweept wings and comp
 
 
 
+
+
+![lisence](https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png)
+**Creative Commons — Attribution-NonCommercial-ShareAlike 4.0**
