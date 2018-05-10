@@ -75,11 +75,7 @@ The design made ready for milling on Shopbot (CNC mill)
 
 ![4 axis foam cutter](Images/cutout.png)
 
-We cut the design by exporting the 2D DXF sketches and doing the CAM operations in Vcarvepro software. The cut out after CNC milling
-
-![4 axis foam cutter](Images/plcut.jpg)
-
-Since this is the intial version we decided to skip the couplers and go with wood on steel. we had to play with the tolerance between the circular hole and the steel tube to get it good enough to move on to the next step.
+We cut the design by exporting the 2D DXF sketches and doing the CAM operations in Vcarvepro software. Since this is the intial version we decided to skip the couplers and go with wood on steel. we had to play with the tolerance between the circular hole and the steel tube to get it good enough to move on to the next step.
 
 ![4 axis foam cutter](Images/intialaxis.jpg)
 
