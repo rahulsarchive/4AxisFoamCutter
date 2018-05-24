@@ -11,7 +11,7 @@ The problem is how to control 4 independent axes at the same time. Most tutorial
 [Hot wire cutter, RcKeith](http://www.rckeith.co.uk/cnc-hot-wire-foam-cutter/)  
 [4-axis cnc hotwire cutter (arduino+Ramps)](https://www.rcgroups.com/forums/showthread.php?2915801-4-Axis-Hot-Wire-CNC-%28Arduino-Ramps1-4%29-Complete-Solution)  
 [WingGcode](https://github.com/swarfer/winggcode)  
-[Airfoil coordinates database](http://m-selig.ae.illinois.edu/ads/coord_database.html)
+[Airfoil coordinates database](http://m-selig.ae.illinois.edu/ads/coord_database.html)  
 [Free CNC Software](http://www.rckeith.co.uk/free-cnc-software-3-and-4-axis/)  
 [4-axis Arduino based Hot wire cutter](https://www.rcgroups.com/forums/showthread.php?2388809-4-axis-Arduino-based-CNC-hot-wire-foam-cutter)  
 [Devcnc Foam cutting software](http://www.devcad.com/eng/devcncfoam_f1_3.asp)  
