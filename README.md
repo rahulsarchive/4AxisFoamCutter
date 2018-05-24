@@ -201,7 +201,6 @@ This is a cool application that can help you determine the temperature of the wi
 
 ![4 axis foam cutter](Images/maiden1.gif)
 
-![cnc hot wire cut foam](Images/core1.jpg)
 
 ![cnc hot wire cut foam](Images/core2.jpg)
 
