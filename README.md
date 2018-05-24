@@ -75,11 +75,7 @@ The design made ready for milling on Shopbot (CNC mill)
 
 ![4 axis foam cutter](Images/cutout.png)
 
-We cut the design by exporting the 2D DXF sketches and doing the CAM operations in Vcarvepro software. The cut out after CNC milling
-
-![4 axis foam cutter](Images/plcut.jpg)
-
-Since this is the intial version we decided to skip the couplers and go with wood on steel. we had to play with the tolerance between the circular hole and the steel tube to get it good enough to move on to the next step.
+We cut the design by exporting the 2D DXF sketches and doing the CAM operations in Vcarvepro software. Since this is the intial version we decided to skip the couplers and go with wood on steel. we had to play with the tolerance between the circular hole and the steel tube to get it good enough to move on to the next step.
 
 ![4 axis foam cutter](Images/intialaxis.jpg)
 
@@ -186,6 +182,23 @@ It has lots of features like cutting wizard to help you do sweept wings and comp
 
 ### Setting the Feed rate and temperature
 
+Unlike conventional milling, the wire cuts by melting the plastic surrounding it, and when the tool stays in one position for some length of time, the surrounding material keeps melting away. This increases the kerf of the cut and cause dimensional inaccuracies. There are two variables which affect the kerf of the cut.
+
+1. Cutting Feed rate.
+2. Temperature of wire.
+
+The **Cutting Feed rate** is the speed with which the wire cuts throuh the material. mostly denotes in **mm/sec**. The faster the speed the lesser the kerf, but the higher the temperature required and also tension in the wire has to be sufficent to withstand the cutting forces. Good starting speeds are around 350mm/s to 500mm/s.
+
+The **Temperature** of the wire must be a bit higher than the melting point of the foam you are cutting. Ideally you want to cut with just the **radiant heat** where by the wire dose not acually touch the material but cuts in front of it. The temperature is governed by the amount of current which flows through the wire, which is determined by its voltage. There are softwares which allow for PWM control of the wire to heat is just right at the moments to optimize the cutting feedrate.
+
+The temperature of the wire is determined by the square of the current times the resistance.
+
+If you are using Nichrome wire,  
+
+[Nichrome wire Application Calculator](http://www.jacobs-online.biz/nichrome/NichromeCalc.html)   
+
+This is a cool application that can help you determine the temperature of the wire depnding on the lenght and the voltage applied. For our setup with a wire lenght of 850mm, we applied a voltage of **26V** and cut at a feed rate of **350mm/s**. This gave us good finish and very low kerf.
+
 
 ### Cutting process
 
@@ -197,3 +210,7 @@ It has lots of features like cutting wizard to help you do sweept wings and comp
 
 
 
+
+
+![lisence](https://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png)
+**Creative Commons — Attribution-NonCommercial-ShareAlike 4.0**
