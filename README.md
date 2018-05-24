@@ -199,14 +199,17 @@ If you are using Nichrome wire,
 
 This is a cool application that can help you determine the temperature of the wire depnding on the lenght and the voltage applied. For our setup with a wire lenght of 850mm, we applied a voltage of **26V** and cut at a feed rate of **350mm/s**. This gave us good finish and very low kerf.
 
-
-### Cutting process
-
 ![4 axis foam cutter](Images/maiden1.gif)
 
 ![cnc hot wire cut foam](Images/core1.jpg)
 
 ![cnc hot wire cut foam](Images/core2.jpg)
+
+### The Cutting process
+
+The Process starts from the design, which is exported as a dxf and turned inot G-code by one of the softwares. The machine is turned on and calibrated, the material is placed on the workbench and the origin is now set. Turn on the hot-wire, run the G-code file and watch the machine do the work for you.
+
+![cnc hotwire 4axis foam wing cut](Images/wingcut.jpeg)
 
 
 
